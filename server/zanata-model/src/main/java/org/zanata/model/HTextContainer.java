@@ -28,6 +28,8 @@ import java.util.List;
 
 import javax.persistence.Transient;
 
+import com.hankcs.lucene.HanLPAnalyzer;
+import com.hankcs.lucene.HanLPTokenizerFactory;
 import org.apache.lucene.analysis.core.LowerCaseFilterFactory;
 import org.apache.lucene.analysis.ngram.NGramTokenizerFactory;
 import org.apache.lucene.analysis.standard.StandardFilterFactory;
@@ -63,6 +65,14 @@ import org.zanata.hibernate.search.TextContainerAnalyzerDiscriminator;
                 @TokenFilterDef(factory = LowerCaseFilterFactory.class)
         // @TokenFilterDef(factory = StopFilterFactory.class)
                 }),
+        /**
+         * IMPORTANT: make sure this matches the code in
+         * {@link HanLPAnalyzer}
+         */
+        @AnalyzerDef(name = Analyzers.CHINESE, tokenizer = @TokenizerDef(
+                factory = HanLPTokenizerFactory.class), filters = {
+                @TokenFilterDef(factory = LowerCaseFilterFactory.class)
+        }),
         /**
          * IMPORTANT: make sure this matches the code in
          * {@link org.zanata.hibernate.search.UnigramAnalyzer}

@@ -222,6 +222,13 @@
       <artifactId>lucene-core</artifactId>
     </dependency>
 
+    <!--A Lucene tokenizer plugin for both Simplified Chinese and Traditional Chinese-->
+    <dependency>
+      <groupId>com.hankcs.nlp</groupId>
+      <artifactId>hanlp-lucene-plugin</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+
     <!-- Solr -->
     <dependency>
       <groupId>org.apache.solr</groupId>

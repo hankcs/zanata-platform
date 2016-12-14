@@ -42,4 +42,9 @@ public class Analyzers {
      * @see UnigramAnalyzer
      */
     public static final String UNIGRAM = "unigramAnalyzerConfig";
+
+    /**
+     * Constant name for Chinese (Simplified and Traditional) AnalyzerDef in HTextContainer.
+     */
+    public static final String CHINESE = "chineseAnalyzerConfig";
 }
