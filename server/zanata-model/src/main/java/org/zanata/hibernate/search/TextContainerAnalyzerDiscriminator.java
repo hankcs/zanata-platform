@@ -79,7 +79,10 @@ public class TextContainerAnalyzerDiscriminator implements Discriminator {
         ULocale uLocale = new ULocale(localeId);
         String langCode = uLocale.getLanguage();
 
-        if (langCode.equalsIgnoreCase("zh") || langCode.equalsIgnoreCase("ja")
+        if (langCode.equalsIgnoreCase("zh")){
+            return Analyzers.CHINESE;
+        }
+        if (langCode.equalsIgnoreCase("ja")
                 || langCode.equalsIgnoreCase("ko")) {
             return Analyzers.UNIGRAM;
         } else {
